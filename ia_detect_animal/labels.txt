@@ -1,0 +1,6 @@
+0 perro
+1 gato
+2 carpincho
+3 pinguino
+4 pato
+5 cuy
