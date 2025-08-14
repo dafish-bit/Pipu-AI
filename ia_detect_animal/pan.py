@@ -1,16 +1,16 @@
 from keras.models import load_model  # TensorFlow is required for Keras to work
 from PIL import Image, ImageOps  # Install pillow instead of PIL
 import numpy as np
-
+import os
 # Disable scientific notation for clarity
 def Que_animal_seraaa(img):  
     np.set_printoptions(suppress=True)
 
     # Load the model
-    model = load_model("keras_model.h5", compile=False)
+    model = load_model("ia_detect_animal/keras_model.h5", compile=False)
 
     # Load the labels
-    class_names = open("labels.txt", "r").readlines()
+    class_names = open("ia_detect_animal/labels.txt", "r").readlines()
 
     # Create the array of the right shape to feed into the keras model
     # The 'length' or number of images you can put into the array is
@@ -38,8 +38,9 @@ def Que_animal_seraaa(img):
     index = np.argmax(prediction)
     class_name = class_names[index]
     confidence_score = prediction[0][index]
-
+    os.remove(img)
     # Print prediction and confidence score
-    return (f"Class:, {class_name[2:]} Confidence Score: {confidence_score}")
+    return (f"Creo que es: {class_name[2:]} Tengo una certeza del {round(confidence_score, 1)*100}%")
+
 
     
