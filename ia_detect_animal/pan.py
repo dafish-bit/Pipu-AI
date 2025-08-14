@@ -3,11 +3,11 @@ from PIL import Image, ImageOps  # Install pillow instead of PIL
 import numpy as np
 
 # Disable scientific notation for clarity
-def analize_THIS(img):  
+def Que_animal_seraaa(img):  
     np.set_printoptions(suppress=True)
 
     # Load the model
-    model = load_model("keras_Model.h5", compile=False)
+    model = load_model("keras_model.h5", compile=False)
 
     # Load the labels
     class_names = open("labels.txt", "r").readlines()

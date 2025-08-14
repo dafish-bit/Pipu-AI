@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
-from pan import analize_THIS
+from Angel.pan import analize_THIS
+from ia_detect_animal.pan import Que_animal_seraaa
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -18,16 +19,26 @@ async def hello(ctx):
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 @bot.command()
-async def analiza(ctx):
+async def analiza_algo(ctx):
     if ctx.message.attachments:
         attachment = ctx.message.attachments[0]
-  
+        
         await attachment.save(attachment.filename)
         
         await ctx.send(analize_THIS(attachment.filename))
     else:
+        "pon una imagen D:<"
+@bot.command()
+async def Que_animal_sera(ctx):
+    if ctx.message.attachments:
+        attachment = ctx.message.attachments[0]
+        
+        await attachment.save(attachment.filename)
+        
+        await ctx.send(Que_animal_seraaa(attachment.filename))
+    else:
+        "pon una imagen D:<"
 
-        await ctx.send('No has adjuntado ninguna imagen. Por favor, usa el comando y adjunta una imagen en el mismo mensaje.')
 hyper_secret_token = open("/home/angel/Documents/algo/cloro.txt", 'r')
 bot.run(hyper_secret_token.read())
 #hola
