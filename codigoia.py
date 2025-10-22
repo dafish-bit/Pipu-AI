@@ -53,7 +53,7 @@ async def Pipu_ai(ctx, que_dijo="El chistosito que llamo este comando y me despe
         await ctx.send(responde_gemini(str(que_dijo), str(who_this)))
     except:
         await ctx.send('Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas")')
-hyper_secret_token = open("/home/angel/Documents/algo/cloro.txt", 'r')
+hyper_secret_token = open("../cloro.txt", 'r')
 
 bot.run(hyper_secret_token.read())
 #hola
